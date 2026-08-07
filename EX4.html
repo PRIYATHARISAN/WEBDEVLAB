@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Web Technology Lab - Experiment 4</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    background: #171818;
+  }
+
+  .page {
+    width: 900px;
+    border: 1px solid #333;
+  }
+  .banner {
+    height: 200px;
+    background: linear-gradient(135deg, #1a53c9, #4a90e2 60%, #6fb1f0);
+    position: relative;
+    overflow: hidden;
+  }
+  .banner img {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    height: 130px;
+    border: 0px solid #a8c1db;
+    background: #01070b;
+  }
+  .banner img:nth-child(2) {
+    left: 100px;
+    top: 40px;
+  }
+
+  .navbar {
+    display: flex;
+    background: #0648b3;
+  }
+  .navbar a {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    color: #070707;
+    text-decoration: none;
+    font-weight: bold;
+    border-right: 1px solid #777;
+  }
+  .navbar a:first-child {
+    background: red;
+  }
+  .navbar a:hover {
+    background: #555;
+  }
+
+  .content {
+    background: pink;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .favourites {
+    background: #2e7d32;
+    width: 260px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .favourites h3 {
+    text-align: center;
+    color: #020202;
+    margin-bottom: 8px;
+  }
+  .fav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8bc34a;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-radius: 4px;
+    color: #1b3a0f;
+    font-weight: bold;
+  }
+  .fav-item span.icon {
+    font-size: 20px;
+  }
+  .content {
+    background: pink;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .favourites {
+    background: #2e7d32;
+    width: 260px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .favourites h3 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .fav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8bc34a;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-radius: 4px;
+    color: #1b3a0f;
+    font-weight: bold;
+  }
+  .fav-item img.icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  /* Sign in / Sign up section */
+  .auth-section {
+    background: linear-gradient(rgba(30,30,30,0.55), rgba(30,30,30,0.55)),
+                url('https://imgd.aeplcdn.com/664x374/n/bw/models/colors/honda-select-model-grand-prix-red-1644556207419.jpg?q=80') center/cover;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+  .form-card {
+    background: #fff;
+    width: 260px;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .form-card h3 {
+    margin-bottom: 15px;
+  }
+  .form-card label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    color: #333;
+  }
+  .form-card input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #eee;
+    font-size: 13px;
+  }
+  .form-card button {
+    margin-top: 18px;
+    width: 100%;
+    padding: 10px;
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .form-card button:hover {
+    background: #0d47a1;
+  }
+
+  /* Footer */
+  footer {
+    background: #ffe0b2;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="banner">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_9ghfRBdn9-rTIpuMS8CFoeuXZ3mnQxVycyQS1qnZng&s=10" alt="drink1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEHbTunV3BTGk2CFf6WaoWWYYPa1QyQQz8tSYKrmlXCA&s=10" alt="drink2">
+  </div>
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#myself">MySelf</a>
+    <a href="#others">Others</a>
+  </div>
+   <!-- Favourites -->
+  <div class="content">
+    <div class="favourites">
+      <h3>Favourites</h3>
+      <div class="fav-item"><span>RR310</span><img class="icon" src="https://imgd.aeplcdn.com/1056x594/n/pcv9qfb_1828109.jpg?q=80" alt="item1"></div>
+      <div class="fav-item"><span>RTX300</span><img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZkOcv2XCjpVcAsndqpKTADfp0t8Uauf7IO5bKFKctVA&s=10" alt="item2"></div>
+      <div class="fav-item"><span>RX100</span><img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPYKKeLVn0dWdJg_XbRhWAewpzfnIjqe1FZ8Yny3xZlg&s=10" alt="item3"></div>
+      <div class="fav-item"><span>CBR500</span><img class="icon" src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/honda-select-model-grand-prix-red-1644556207419.jpg?q=80" alt="item4"></div>
+    </div>
+  </div>
+  <div class="auth-section">
+    <div class="form-card">
+      <h3>Sign In</h3>
+      <form>
+        <label>Username</label>
+        <input type="text" placeholder="Enter Username / Email / Phone Number">
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password">
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+
+    <div class="form-card">
+      <h3>Sign Up</h3>
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Enter Name">
+        <label>Email</label>
+        <input type="email" placeholder="Enter Email">
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password">
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>Your address</p>
+    <p>&copy; 2020-2021. (URK24CS1125) - Web Technology Lab Batch 1. All Rights Reserved.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
