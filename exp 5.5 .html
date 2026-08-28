@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Cake Order Form - URK24CS1146</title>
+</head>
+<body>
+
+    <h2>Birthday Cake Order Form - URK24CS1146</h2>
+    
+    Number of 1/2kg Cakes:<br>
+    <input type="text" id="small"><br><br>
+    
+    Number of 1kg Cakes:<br>
+    <input type="text" id="medium"><br><br>
+    
+    Number of 2kg Cakes:<br>
+    <input type="text" id="large"><br><br>
+    
+    Tip:<br>
+    <input type="radio" name="tip" value="10"> 10%
+    <input type="radio" name="tip" value="15" checked> 15%
+    <input type="radio" name="tip" value="20"> 20%
+    <br><br>
+    
+    <button id="submit">Calculate Order</button>
+    
+    <p>Cost of order: Rs. <span id="price"></span></p>
+
+    <script>
+        document.getElementById("submit").addEventListener("click", calculate);
+
+        function calculate() {
+            // Added || 0 fallback so empty fields don't cause NaN errors
+            let small = parseInt(document.getElementById("small").value) || 0;
+            let medium = parseInt(document.getElementById("medium").value) || 0;
+            let large = parseInt(document.getElementById("large").value) || 0;
+            
+            let tip = parseInt(document.querySelector('input[name="tip"]:checked').value);
+
+            // Corrected formula structure
+            let cost = (small * 100) + (medium * 200) + (large * 400);
+            let tax = cost * 0.05;
+            let total = cost + tax;
+            
+            total = total + (total * tip / 100);
+
+            document.getElementById("price").innerHTML = total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
