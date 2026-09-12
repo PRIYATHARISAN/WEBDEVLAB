@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Font Size - URK24CS1125</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5rem;
+            transition: font-size 0.2s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Updated header registration number to URK24CS1125 -->
+    <h1>Change Font Size - URK24CS1125</h1>
+    
+    <p id="text-paragraph" onmouseover="increaseSize()" onmouseout="resetSize()">
+        Move the cursor over this paragraph.
+    </p>
+
+    <script>
+    var paragraph = document.getElementById("text-paragraph");
+
+    function increaseSize() {
+        paragraph.style.fontSize = "2.5rem";
+    }
+
+    function resetSize() {
+        paragraph.style.fontSize = "1.5rem";
+    }
+    </script>
+
+</body>
+</html>

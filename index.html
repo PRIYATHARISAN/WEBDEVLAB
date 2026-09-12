@@ -1,0 +1,25 @@
+<body>
+<h1>Dynamic Background!</h1>
+
+<script>
+// Define function setBackgroundColor
+function setBackgroundColor() {
+    // Create random colors using rgb function
+    var red = Math.floor(Math.random() * 256);   // Multiplied by 256 to include the number 255
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+    
+    var color = "rgb(" + red + "," + green + "," + blue + ")";
+    
+    // Change or set body background color
+    document.getElementsByTagName("body")[0].style.backgroundColor = color;
+}
+
+// Call the function immediately so the background changes right when the page loads
+setBackgroundColor();
+
+// Call the setBackgroundColor function every 30 seconds (30000 milliseconds)
+// Change 30000 to 2000 if you want it to change every 2 seconds instead
+setInterval(setBackgroundColor, 30000);
+</script>
+</body>

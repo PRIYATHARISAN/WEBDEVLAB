@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Single Student Record</title>
+</head>
+<body>
+
+    <h1>Student Information</h1>
+    <div id="student-display"></div>
+
+    <script>
+    // Isolated record for URK24CS1125
+    var studentRecord = { 
+        name: 'urkregnon', 
+        r_num: 'URK24CS1125', 
+        dob: 1995 
+    };
+
+    var displayContainer = document.getElementById("student-display");
+
+    // Format and display the student data
+    var outputHTML = "<p><strong>Name:</strong> " + studentRecord.name + "</p>";
+    outputHTML += "<p><strong>Register Number:</strong> " + studentRecord.r_num + "</p>";
+    
+    // Categorize age logic
+    if (studentRecord.dob < 2000) {
+        outputHTML += "<p><strong>Category:</strong> Born before 2000 (Year: " + studentRecord.dob + ")</p>";
+    } else {
+        outputHTML += "<p><strong>Category:</strong> Born in or after 2000 (Year: " + studentRecord.dob + ")</p>";
+    }
+
+    displayContainer.innerHTML = outputHTML;
+    </script>
+
+</body>
+</html>
